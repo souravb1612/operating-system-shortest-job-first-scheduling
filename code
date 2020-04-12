@@ -40,6 +40,15 @@
 		}
 		  printf("\n\n\tProcess\t|Turnaround Time|Waiting Time\n\n"); 
 		  printf("\t===========================================\n");
+		  	for(i=0;i<n;i++)
+		{
+			if(burst_time[i]>10)
+			{
+				printf("\nS INVALID Burst Time it should be less than 10\n");
+				getch();
+				exit(1);
+			}
+		}
 		for(i=0;i<n;i++)
 		{
 			m=m+burst_time[i];

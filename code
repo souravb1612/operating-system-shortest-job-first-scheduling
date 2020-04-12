@@ -1,0 +1,107 @@
+    #include<stdio.h>	
+		#include<stdlib.h>
+		#include<conio.h> 
+		 
+		int main() 
+		{ 
+		 
+		  int s,i,j,m=0,n,y=0,time,remain=0,min,temp=0; 
+		  int waiting_time=0,turnaround_time=0,arival_time[10],burst_time[10],q[10],l[10];
+		  float k=0,x=0; 
+		  printf("Enter number of Process:\t "); 
+		  scanf("%d",&n); 
+		  printf("\n\tArrival time should be greater than 2 as CPU remains idle for first 3 secs.\n");
+		  printf("\n\tBurst time should be less tha 10\n");
+		  for(s=0;s<n;s++) 
+		  { 
+		    printf("Enter Arrival Time and Burst Time for Process Process Number %d :",count+1); 
+		    scanf("%d",&arival_time[s]); 
+		    scanf("%d",&burst_time[s]);  
+		  } 
+		
+
+		for(i=0;i<n;i++)
+		{
+			if(arival_time[i]==0)
+			{
+				printf("\nS INVALID ARRIVAL TIME\n");
+				getch();
+				exit(1);
+			}
+		}
+		for(i=0;i<n;i++)
+		{
+			if(arival_time[i]<3)
+			{
+				printf("\nS INVALID Arrival Time it should be greater than 3\n");
+				getch();
+				exit(1);
+			}
+		}
+		  printf("\n\n\tProcess\t|Turnaround Time|Waiting Time\n\n"); 
+		  printf("\t===========================================\n");
+		for(i=0;i<n;i++)
+		{
+			m=m+burst_time[i];
+		}
+		min=m;
+		time=m;
+		for(i=0;i<n;i++)
+		{
+			if(arival_time[i]<time)
+			{
+				time=arival_time[i];
+			}
+		}
+		for(i=time;i<=m;i=i+b_time[j])
+		{
+			min=m;
+			remain=0;
+			temp=0;
+		
+        for(s=0;s<n;s++)
+			   {
+			
+				if(arival_time[s]<=i)
+				{
+		
+          	if(burst_time[s]<min)
+					{
+		        	min = burst_time[s];
+						  j=s;
+					  	temp=1;
+					}
+					remain=1;	 
+				}
+			}
+			if(temp==1&&remain==1)
+			{
+				waiting_time=i-arival_time[j];
+				turnaround_time=waiting_time+burst_time[j];
+				printf("\tP[%d]\t|\t%d\t|\t%d\n",j+1,turnaround_time,waiting_time); 
+				k=k+waiting_time;
+				x=x+turnaround_time;
+			
+				arival_time[j]=m+1;
+				q[y]=j+1;
+				l[y]=i;
+				y++;
+			}
+		}
+		printf("\n\nAverage Waiting Time= %.2f\n",k/n); 
+		printf("Avg Turnaround Time = %.2f",x/n); 
+		printf("\n\n\nTotal time taken by processor to complete all the jobs : %d",m);  
+		printf("\n\nQueue  for order of execution:\n");
+		printf("\n\nProcess		");
+		
+   	for(i=0;i<n;i++)
+		{
+			printf(" q[%d]   ",q[i]);
+			if(i==(n-1))
+			{
+				printf("End");
+			}
+		}
+		  return 0; 
+		}
+

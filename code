@@ -14,7 +14,7 @@
 		  printf("\n\tBurst time should be less tha 10\n");
 		  for(s=0;s<n;s++) 
 		  { 
-		    printf("Enter Arrival Time and Burst Time for Process Process Number %d :",count+1); 
+		    printf("Enter Arrival Time and Burst Time for Process Process Number %d :",s+1); 
 		    scanf("%d",&arival_time[s]); 
 		    scanf("%d",&burst_time[s]);  
 		  } 
